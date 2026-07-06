@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "Про меня"
 ---
 
 <html lang="ru">
@@ -9,7 +9,7 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>О нас</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 
@@ -17,8 +17,9 @@
 		<a href="/about/">О нас</a>
 		<a href="/blog/">Блог</a>
 
-		<h1>Текс из h1 страницы о нас</h1>
+		<h1>Текс из h1 страницы "О нас"</h1>
         <h1>Текст из h2</h1>
+        <h1>Текст из переменной pageTitle: {pageTitle}</h1>
 
         <p>Это обзац</p>
 
