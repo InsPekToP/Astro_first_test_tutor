@@ -9,4 +9,8 @@ pubDate: 2022-07-15
 tags: ["astro", "learning in public", "setbacks", "community"]
 ---
 
+[Главная](/)
+[О нас](/about/)
+[Блог](/blog/)
+
 Не всё всегда шло гладко, но мне нравится создавать сайты с помощью Astro. А ещё сообщество [Discord](https://astro.build/chat) очень дружелюбное и всегда готово помочь!

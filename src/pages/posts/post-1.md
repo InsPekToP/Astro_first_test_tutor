@@ -8,6 +8,11 @@ image:
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "learning in public"]
 ---
+
+[Главная](/)
+[О нас](/about/)
+[Блог](/blog/)
+
 # Моя первая запись в блоге
 
 Опубликовано: 2022-07-01
