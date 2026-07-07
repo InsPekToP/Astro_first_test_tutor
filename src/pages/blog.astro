@@ -1,4 +1,8 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+
 import '../styles/global.css'
 
 const pageTitle = "Блог(из переменной)";
@@ -18,9 +22,7 @@ const pageTitle = "Блог(из переменной)";
 
 	<body>
 
-        <a href="/">Главная</a>
-		<a href="/about/">О нас</a>
-		<a href="/blog/">Блог</a>
+		<Navigation/>
 
 		<h1>Текс из h1 страницы Блога</h1>
         <h1>Текст из h2</h1>
@@ -36,6 +38,6 @@ const pageTitle = "Блог(из переменной)";
             <li><a href="/posts/post-3">Пост 3</a></li>
         </ul>
 
-
+		<Footer />
 	</body>
 </html>

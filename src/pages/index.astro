@@ -1,4 +1,8 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+
+
 import '../styles/global.css'
 
 const pageTitle = "Главная(из переменной)"
@@ -15,11 +19,11 @@ const pageTitle = "Главная(из переменной)"
 	</head>
 	<body>
 
-		<a href="/">Главная</a>
-		<a href="/about/">О нас</a>
-		<a href="/blog/">Блог</a>
+		<Navigation />
 		
 		<h1>Привет из Главной</h1>
 		<h1>"Это текст из pageTitle: {pageTitle}"</h1>
+
+		<Footer />
 	</body>
 </html>
