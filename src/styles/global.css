@@ -20,3 +20,16 @@ h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
 }
+
+/* nav styles */
+
+.nav-links {
+  width: 100%;
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+}

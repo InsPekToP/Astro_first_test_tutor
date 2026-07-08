@@ -1,5 +1,6 @@
 ---
-import Navigation from '../components/Navigation.astro';
+// import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
 
@@ -47,7 +48,9 @@ const textCase = "uppercase";
 	</head>
 	<body>
 
-		<Navigation/>
+		<!-- <Navigation /> -->
+		<!-- Добавили компонент Navigation в Header, теперь заменяем Navigation на Header -->
+		<Header />
 
 		<h1>Текс из h1 страницы "О нас"</h1>
         <h1>Текст из h2</h1>
