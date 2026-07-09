@@ -6,7 +6,8 @@ import Footer from '../components/Footer.astro';
 
 import '../styles/global.css'
 
-const pageTitle = "Главная(из переменной)"
+// const pageTitle = "Главная(из переменной)"
+const { pageTitle } = Astro.props;
 ---
 
 <html lang="ru">
@@ -26,6 +27,8 @@ const pageTitle = "Главная(из переменной)"
 		
 		<h1>Привет из Главной</h1>
 		<h1>"Это текст из pageTitle: {pageTitle}"</h1>
+    
+    <!-- вставка h2 из index.astro -->
     <slot />
 
 		<Footer />

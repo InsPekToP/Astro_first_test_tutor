@@ -1,89 +1,12 @@
 ---
-// import Navigation from '../components/Navigation.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro'
 
+const pageTitle = "Про меня(из переменной,и BaseLayout)"
 
-import '../styles/global.css'
-
-const pageTitle = "Про меня(из переменной)"
-
-const identity = {
-	firstName: "InsPekToP",
-	country: "Poland",
-	occupation: "Python-developer",
-	hobbies: ["rover", "basen", "silownia"]
-};
-
-const skills = ["Python", "JavaScript", "SQL"]
-
-const happy = true;
-const finished = false;
-const goal = 3;
-
-const skillColor = "crimson";
-const fontWeight = "bold";
-const textCase = "uppercase";
 ---
 
-<html lang="ru">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-		<style define:vars={{skillColor, fontWeight, textCase}}>
-			h1 {
-				color: purple;
-				font-size: 4rem;
-			}
-			.skill {
-				color: var(--skillColor);
-				font-weight: var(--fontWeight);
-        text-transform: var(--textCase);
-			}
-		</style>
-	</head>
-	<body>
+<BaseLayout pageTitle={pageTitle}>
 
-		<!-- <Navigation /> -->
-		<!-- Добавили компонент Navigation в Header, теперь заменяем Navigation на Header -->
-		<Header />
-
-		<h1>Текс из h1 страницы "О нас"</h1>
-        <h1>Текст из h2</h1>
-        <h1>Текст из переменной pageTitle: {pageTitle}</h1>
-
-        <p>Это обзац</p>
-
-        <p>Это дубликат обзаца</p>
-
-				<p>Несколько фактов про меня:</p>
-
-		<ul>
-			<li>Меня зовут: {identity.firstName}</li>
-			<li>Я живу в {identity.country} и я работаю {identity.occupation}</li>
-			{identity.hobbies.length >=2 &&
-				<li>Некоторые из моих Хобби" {identity.hobbies[0]} и {identity.hobbies[1]} </li>
-			}
-		</ul>
-
-		<p>Мои навыки:</p>
-
-		<ul>
-			{skills.map((skill) => <li class="skill">{skill}</li>)}
-		</ul>
-
-		{happy && <p>Выводится,если happy = true</p>}
-		{finished && <p>Выводится,если finished = true</p>}
-		{goal === 3 ? <p>Выводтся,если goal = 3 </p> : <p>Выводтся,если goal ≠ 3</p>}
-
-		<Footer />
-
-		<script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
+  
+  
+</BaseLayout>

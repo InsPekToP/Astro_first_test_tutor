@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
 
-const pageTitle = "Home Page"
+const pageTitle = "Главная (index.astro)"
 ---
 
-<BaseLayout>
-  <h2>h2 их компонента index.astro</h2>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>h2 из компонента index.astro</h2>
 </BaseLayout>
 
 
-Весь HTML из index.astro перенесен в BaseLayout.astro
+<!-- Весь HTML из index.astro перенесен в BaseLayout.astro -->
 
 
