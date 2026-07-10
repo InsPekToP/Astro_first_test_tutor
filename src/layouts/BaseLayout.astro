@@ -25,11 +25,8 @@ const { pageTitle } = Astro.props;
 		<!-- Добавили компонент Navigation в Header, теперь заменяем Navigation на Header -->
 		<Header />
 		
-		<h1>Привет из Главной</h1>
-		<h1>"Это текст из pageTitle: {pageTitle}"</h1>
-    
-    <!-- вставка h2 из index.astro -->
-    <slot />
+		<!-- вставка h2 из index.astro -->
+		<slot />
 
 		<Footer />
 
