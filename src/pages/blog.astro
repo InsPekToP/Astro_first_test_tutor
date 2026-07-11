@@ -1,50 +1,24 @@
 ---
-// import Navigation from '../components/Navigation.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro'
 
 
-import '../styles/global.css'
-
-const pageTitle = "Блог(из переменной)";
-
+const pageTitle = "Блог(из переменной,из шаблона)";
 ---
 
-<html lang="ru">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
+<BaseLayout pageTitle=pageTitle>
 
+    <h1>Текс из h1 страницы Блога</h1>
+    <h1>Текст из h2</h1>
+    <h1>Это текст из pageTitle {pageTitle}</h1>
 
-	<body>
+    <p>Это обзац</p>
 
-		<!-- <Navigation /> -->
-		<!-- Добавили компонент Navigation в Header, теперь заменяем Navigation на Header -->
-		<Header />
+    <p>Это дубликат обзаца</p>
 
-		<h1>Текс из h1 страницы Блога</h1>
-        <h1>Текст из h2</h1>
-        <h1>Это текст из pageTitle {pageTitle}</h1>
+    <ul>
+        <li><a href="/posts/post-1">Пост 1</a></li>
+        <li><a href="/posts/post-2">Пост 2</a></li>
+        <li><a href="/posts/post-3">Пост 3</a></li>
+    </ul>
 
-        <p>Это обзац</p>
-
-        <p>Это дубликат обзаца</p>
-
-        <ul>
-            <li><a href="/posts/post-1">Пост 1</a></li>
-            <li><a href="/posts/post-2">Пост 2</a></li>
-            <li><a href="/posts/post-3">Пост 3</a></li>
-        </ul>
-
-		<Footer />
-
-		<script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
+</BaseLayout>
