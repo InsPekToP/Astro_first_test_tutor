@@ -1,20 +1,38 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
 
 export async function getStaticPaths() {
+  const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+
+  //Получаем список всех тегов
+  const uniqueTags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+
   return [
-    { params: { tag: "astro" } },
-    { params: { tag: "successes" } },
-    { params: { tag: "community" } },
-    { params: { tag: "blogging" } },
-    { params: { tag: "setbacks" } },
-    { params: { tag: "learning in public" } },
+    { params: { tag: "astro" }, props: {posts: allPosts} },
+    { params: { tag: "successes" }, props: {posts: allPosts}},
+    { params: { tag: "community" }, props: {posts: allPosts} },
+    { params: { tag: "blogging" }, props: {posts: allPosts} },
+    { params: { tag: "setbacks" }, props: {posts: allPosts} },
+    { params: { tag: "learning in public" }, props: {posts: allPosts} },
   ];
 }
 
 const { tag } = Astro.params;
+const { posts } = Astro.props;
+//Отфильтрованный список записей через встроенную поддержку TypeScript, чтобы включить только
+// те записи, которые содержат собственный тег страницы.
+const filteredPosts = posts.filter((post:any) => post.frontmatter.tags?.includes(tag))
 ---
 
 <BaseLayout pageTitle={tag}>
   <p> Посты вместе с тегами: {tag} </p>
+
+  <ul>
+    {filteredPosts.map((post: any) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
+  </ul>
+  <hr>
+  <ul>
+    {filteredPosts.map((post: any) => <BlogPost url={post.url} title={`BlogPost - ${post.frontmatter.title}`}/>)}
+  </ul>
 </BaseLayout>
